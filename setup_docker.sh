@@ -2,7 +2,11 @@
 
 set -e
 
-DOCKER_ENVIRONMENT=docker_environment
+if [ -z $1 ]; then
+	DOCKER_ENVIRONMENT=docker_environment
+else
+	DOCKER_ENVIRONMENT=$1
+fi
 
 if [ ! -d $DOCKER_ENVIRONMENT ]; then
 	mkdir $DOCKER_ENVIRONMENT
